@@ -359,7 +359,7 @@ export default class VideoPlayer extends Component {
         style={[styles.playButton, customStyles.playButton]}
         onPress={this.onStartPress}
       >
-        <Icon style={[styles.playArrow, customStyles.playArrow]} name={iconName['play-arrow']} size={42} />
+        <Icon style={[styles.playArrow, customStyles.playArrow]} name={iconName['play-arrow']} size={42} color="#fff" />
       </TouchableOpacity>
     );
   }
@@ -439,6 +439,7 @@ export default class VideoPlayer extends Component {
             style={[styles.playControl, customStyles.controlIcon, customStyles.playIcon]}
             name={this.state.isPlaying ? iconName['pause'] : iconName['play-arrow']}
             size={32}
+            color="#fff"
           />
         </TouchableOpacity>
         {this.renderSeekBar()}
@@ -448,6 +449,7 @@ export default class VideoPlayer extends Component {
               style={[styles.extraControl, customStyles.controlIcon]}
               name={this.state.isMuted ? iconName['volume-off'] : iconName['volume-up']}
               size={24}
+              color="#fff"
             />
           </TouchableOpacity>
         )}
@@ -457,6 +459,7 @@ export default class VideoPlayer extends Component {
               style={[styles.extraControl, customStyles.controlIcon]}
               name={iconName['fullscreen']}
               size={32}
+              color="#fff"
             />
           </TouchableOpacity>
         )}
