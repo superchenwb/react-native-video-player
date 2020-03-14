@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Image, ImageBackground, Platform, StyleSheet, TouchableOpacity, View, ViewPropTypes} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+// import Icon from 'react-native-vector-icons/MaterialIcons';
 import Video from 'react-native-video'; // eslint-disable-line
 
 const BackgroundImage = ImageBackground || Image; // fall back to Image if RN < 0.46
@@ -354,13 +354,13 @@ export default class VideoPlayer extends Component {
   }
 
   renderStartButton() {
-    const { customStyles } = this.props;
+    const { customStyles, Icon, iconName } = this.props;
     return (
       <TouchableOpacity
         style={[styles.playButton, customStyles.playButton]}
         onPress={this.onStartPress}
       >
-        <Icon style={[styles.playArrow, customStyles.playArrow]} name="play-arrow" size={42} />
+        <Icon style={[styles.playArrow, customStyles.playArrow]} name={iconName['play-arrow']} size={42} />
       </TouchableOpacity>
     );
   }
@@ -429,7 +429,7 @@ export default class VideoPlayer extends Component {
   }
 
   renderControls() {
-    const { customStyles } = this.props;
+    const { customStyles, Icon } = this.props;
     return (
       <View style={[styles.controls, customStyles.controls]}>
         <TouchableOpacity
@@ -438,7 +438,7 @@ export default class VideoPlayer extends Component {
         >
           <Icon
             style={[styles.playControl, customStyles.controlIcon, customStyles.playIcon]}
-            name={this.state.isPlaying ? 'pause' : 'play-arrow'}
+            name={this.state.isPlaying ? iconName['pause'] : iconName['play-arrow']}
             size={32}
           />
         </TouchableOpacity>
@@ -447,7 +447,7 @@ export default class VideoPlayer extends Component {
           <TouchableOpacity onPress={this.onMutePress} style={customStyles.controlButton}>
             <Icon
               style={[styles.extraControl, customStyles.controlIcon]}
-              name={this.state.isMuted ? 'volume-off' : 'volume-up'}
+              name={this.state.isMuted ? iconName['volume-off'] : iconName['volume-up']}
               size={24}
             />
           </TouchableOpacity>
@@ -456,7 +456,7 @@ export default class VideoPlayer extends Component {
           <TouchableOpacity onPress={this.onToggleFullScreen} style={customStyles.controlButton}>
             <Icon
               style={[styles.extraControl, customStyles.controlIcon]}
-              name="fullscreen"
+              name={iconName['fullscreen']}
               size={32}
             />
           </TouchableOpacity>
