@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Image, ImageBackground, Platform, StyleSheet, TouchableOpacity, View, ViewPropTypes} from 'react-native';
-// import Icon from 'react-native-vector-icons/MaterialIcons';
 import Video from 'react-native-video'; // eslint-disable-line
 
 const BackgroundImage = ImageBackground || Image; // fall back to Image if RN < 0.46
@@ -578,8 +577,8 @@ VideoPlayer.propTypes = {
     controls: ViewPropTypesVar.style,
     playControl: TouchableOpacity.propTypes.style,
     controlButton: TouchableOpacity.propTypes.style,
-    controlIcon: Icon.propTypes.style,
-    playIcon: Icon.propTypes.style,
+    // controlIcon: Icon.propTypes.style,
+    // playIcon: Icon.propTypes.style,
     seekBar: ViewPropTypesVar.style,
     seekBarFullWidth: ViewPropTypesVar.style,
     seekBarProgress: ViewPropTypesVar.style,
@@ -588,7 +587,7 @@ VideoPlayer.propTypes = {
     seekBarBackground: ViewPropTypesVar.style,
     thumbnail: Image.propTypes.style,
     playButton: TouchableOpacity.propTypes.style,
-    playArrow: Icon.propTypes.style,
+    // playArrow: Icon.propTypes.style,
   }),
   onEnd: PropTypes.func,
   onProgress: PropTypes.func,
