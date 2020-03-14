@@ -428,7 +428,7 @@ export default class VideoPlayer extends Component {
   }
 
   renderControls() {
-    const { customStyles, Icon } = this.props;
+    const { customStyles, Icon, iconName } = this.props;
     return (
       <View style={[styles.controls, customStyles.controls]}>
         <TouchableOpacity
